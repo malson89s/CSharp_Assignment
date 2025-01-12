@@ -2,9 +2,9 @@
 
 public static class IdGenerator
 {
-    public static Guid GenerateId()
+    public static string Generate()
     {
-        return Guid.NewGuid();
+        return Guid.NewGuid().ToString();
     }
 }
 
