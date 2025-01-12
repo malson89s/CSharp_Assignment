@@ -13,7 +13,7 @@ public class ContactService
     // Skapar en kontakt
     public void CreateContact(ContactModel model)
     {
-        model.Id = _contactsList.Count > 0 ? _contactsList[^1].Id + 1 : 1;
+        model.IdNumber = _contactsList.Count > 0 ? _contactsList[^1].IdNumber + 1 : 1;
         model.CreatedDate = DateTime.Now;
 
         _contactsList.Add(model);

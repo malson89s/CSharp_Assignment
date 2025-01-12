@@ -65,6 +65,18 @@ public class MenuDialog
         Console.Write("Enter Email: ");
         contact.Email = Console.ReadLine()!;
 
+        Console.Write("Enter Phone Number: ");
+        contact.Phone = Console.ReadLine()!;
+
+        Console.Write("Enter Street Adress: ");
+        contact.StreetAdress = Console.ReadLine()!;
+
+        Console.Write("Enter Postal Code: ");
+        contact.PostalCode = Console.ReadLine()!;
+
+        Console.Write("Enter City: ");
+        contact.City = Console.ReadLine()!;
+
         _contactService.CreateContact(contact);
 
     }
@@ -81,6 +93,7 @@ public class MenuDialog
         {
             OutputDialog("Something went wrong. Please try again later ");
             return;
+            // hamnar dit där metoden anroppades vid return case 2
         }
 
         if (!contacts.Any())
@@ -90,7 +103,7 @@ public class MenuDialog
         }
         foreach (var contact in contacts)
         {
-            Console.WriteLine($"{contact.Id} Name: {contact.FirstName} {contact.LastName} Email: {contact.Email} Created: {contact.CreatedDate}");
+            Console.WriteLine($"{contact.Id} Name: {contact.FirstName} {contact.LastName} Email: <{contact.Email}> {contact.Phone} {contact.StreetAdress} {contact.PostalCode} {contact.City} Created: {contact.CreatedDate}");
         }
         Console.ReadKey();
     }
